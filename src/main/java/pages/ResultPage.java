@@ -94,8 +94,7 @@ public class ResultPage extends MainPage {
         return true;
     }
 
-    public ResultPage waitResultList(){
+    public void waitResultList(){
         wait.until(ExpectedConditions.visibilityOfAllElements(tickets));
-        return this;
     }
 }

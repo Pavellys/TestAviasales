@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 
 public class MainPage extends BasePage{
     private static final String CHOOSE_DATE_ON_WINDOW = "//*[contains(@class,'calendar-day__date')";
+    private static final String FROM_CITY_FIELD = "//*[@value='Минск']";
     @FindBy(id = "origin")
     WebElement fromField;
     @FindBy(id = "destination")
@@ -35,11 +36,11 @@ public class MainPage extends BasePage{
     }
 
     public MainPage waitCityField(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@value='Минск']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FROM_CITY_FIELD)));
         return this;
     }
 
-    public MainPage fromWhichCity(String fromCity){
+    public MainPage enterFromWhichCity(String fromCity){
         fromField.sendKeys(fromCity);
         String value = fromField.getAttribute("value");
         if(!value.equals(fromCity)) {
@@ -49,7 +50,7 @@ public class MainPage extends BasePage{
         return this;
     }
 
-    public MainPage toWhichCity(String toCity){
+    public MainPage enterToWhichCity(String toCity){
         toField.sendKeys(toCity);
         return this;
     }

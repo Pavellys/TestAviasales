@@ -14,8 +14,8 @@ public class MainTest extends BaseTest {
     public void checkSearchForm() {
         mainPage.openPage(MAIN_URL)
                 .waitCityField()
-                .fromWhichCity(CITY_DEPARTURE)
-                .toWhichCity(CITY_ARRIVAL)
+                .enterFromWhichCity(CITY_DEPARTURE)
+                .enterToWhichCity(CITY_ARRIVAL)
                 .clickToDateField()
                 .chooseDateOnCalendar(plusDay)
                 .chooseDateOnCalendar(plusTwoDay)
